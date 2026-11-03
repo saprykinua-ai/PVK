@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+<lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset='UTF-8'>
+    <!-- <link rel="stylesheet" href="./styles/style.css"> стили -->
+    <title>Пароводяной котёл</title>
+
+  <script>
+      function GetSwitchState()
+      {
+          nocache = "&nocache=" + Math.random() * 1000000;
+          var request = new XMLHttpRequest();
+          request.onreadystatechange = function()
+          {
+            if(this.readyState == 4){
+              if(this.status == 200){
+                if(this.responseText != null){
+                  document.getElementById("switch_txt").innerHTML = this.responseText;
+                }
+              }
+            }
+
+          }
+          request.open("GET", "ajax_switch" + nocache, true);
+          request.send(null);
+      }
+
+
+  //    void GetSwitchState1(EthernetClient cl) {
+  //  if (digitalRead(3)) {
+ //       cl.println("Switch state: ON");
+ //   } else {
+   //     cl.println("Switch state: OFF");
+  //  }
+
+
+     // var xhr;
+    //  var idTimer1;
+    //  function onload(){
+    //    xhr = new(XMLHttpRequest);
+     //   xhr.open("POST", "color.html?start=0", true, null, null);
+     //   xhr.responseType = "text";
+     //   xhr.onload = function(oEvent){
+     //       document.getElementById('info_tabl').innerHTML = xhr.responseType;
+    //    }
+     //   xhr.send(null);
+     //   idTimer1 = setInterval("idTimer1()", 1000);
+     // }
+     // function idTimer1(){
+     //     return;
+        // xhr.open("POST", "color.html?start=0", true);
+       // xhr.responseType = "text";
+        //xhr.onload = function(oEvent){
+         //   document.getElementById('info_tabl').innerHTML = xhr.responseType;
+       // }
+      //  xhr.send(null);
+       // idTimer1 = setInterval("idTimer1()", 1000);
+     // }      
+    </script>
+    
+    <style>
+      table {
+        border: 1px solid rgb(250, 3, 3);
+        font: 100;
+      }
+      th{
+        border: 1px solid rgb(243, 9, 9);
+      }
+      td{
+        border: 1px solid rgb(243, 5, 5);
+        text-align: center;
+      }
+    </style>
+</head>
+    <!--<body onload="onload()">-->
+
+        <div id="info_tabl"></div>  
+        <p id="switch_txt">Switch state: Not requested...</p>        
+        <button type="button" onclick = "GetSwitchState()"> Get Switch State </button>
+
+
+        <h2>Температура бака: %T0% &deg;C</h2>    
+        <h2>Температура ЭБУ: %T1% &deg;C</h2>     
+        <h2>Температура холодильника: %T2% &deg;C</h2>     
+        <h2>Температура дефлегматора: %T3% &deg;C</h2>             
+       <!-- <form action="/get">
+        Температура включения: <input type="number" step="0.1" name="threshold_input" value="%THRESHOLD%" required><br>
+        </form>-->
+  <div>   
+        <img src="mix_on.png"  width="106" height="75" alt="">   
+        <img src="distil.png"  width="200" height="162" alt=""><br />           
+           
+        <img src="kub.png"  width="167" height="250"style="position: relative; left: 37px; alt=""><br />
+        </div
+  <div>              
+        <img src="button_off.png" alt="" width="38" height="38"><br />
+        <img src="button_off.png" alt="" width="38" height="38"><br />
+        <img src="button_off.png" alt="" width="38" height="38"><br />
+        <img src="button_off.png" alt="" width="38" height="38">                     
+  </div>
+
+    <input type="submit" value="Сохранить">
+     </body>   
+  </html>
